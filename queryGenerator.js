@@ -8,9 +8,7 @@ function extractModelSchemas(models) {
 	return Object.keys(models)
 		.map((modelName) => {
 			const model = models[modelName];
-			console.log(model);
 			if (!model.rawAttributes) return ''; // Skip if it's not a Sequelize model
-			console.log(model.rawAttributes);
 			const attributes = Object.keys(model.rawAttributes).map((key) => {
 				const attr = model.rawAttributes[key];
 				return `${key} (${attr.type.key}${attr.allowNull ? ', NULL' : ', NOT NULL'})`;
