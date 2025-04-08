@@ -1,0 +1,15 @@
+
+services:
+  redis:
+    container_name: redis-node-promptql
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  node-promptql:
+    container_name: node-promptql
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis

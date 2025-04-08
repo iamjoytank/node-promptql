@@ -1,0 +1,22 @@
+{
+	"local": {
+		"use_env_variable": "DATABASE_URL",
+		"logging": false,
+		"sync": true,
+		"dialect": "postgres",
+		"ssl": false
+	},
+	"development": {
+		"use_env_variable": "DATABASE_URL",
+		"logging": false,
+		"sync": false,
+		"dialect": "postgres",
+		"ssl": true,
+		"dialectOptions": {
+			"ssl": {
+				"require": true,
+				"rejectUnauthorized": false
+			}
+		}
+	}
+}

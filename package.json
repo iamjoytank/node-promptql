@@ -1,0 +1,28 @@
+{
+	"name": "node-promptql",
+	"version": "1.0.0",
+	"description": "Node PromptQL is a Node.js-based project designed to simplify and enhance the process of working with prompts and queries",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app",
+		"lint": "eslint config/ controllers/ models/ routes/ schema-validation/ app.js --fix --cache",
+		"prettier": "prettier --config ./.prettierrc \"*/**/*{.js,.json,.html}\" --write",
+		"format": "yarn run prettier && yarn run lint",
+		"migrate:up": "npx sequelize-cli db:migrate",
+		"migrate:undo": "npx sequelize-cli db:migrate:undo",
+		"seed:up": "npx sequelize-cli db:seed:all",
+		"seed:undo": "npx sequelize-cli db:seed:undo"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"chalk": "4.1.2",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"openai": "^4.89.0",
+		"pg": "^8.14.1",
+		"redis": "^4.7.0",
+		"sequelize": "^6.37.6"
+	}
+}
